@@ -17,7 +17,7 @@ def count_digits(number):
 
 #2
 
-number=input('Enter Number: ')
+# number=input('Enter Number: ')
 # print(number)
 
 def replace_nine(number):
@@ -31,4 +31,49 @@ def replace_nine(number):
     return result
 
 
-print(f'result: {replace_nine(number)}')
+# print(f'result: {replace_nine(number)}')
+
+
+#3
+
+def equality_list(list1,list2):
+    for i in list1:
+        for j in list2:
+            if i!=j:
+                return 'A Lists are not equal' #Списки не равны
+            else:
+                print('*')
+                break
+        print('*')
+    return 'A Lists are equal' #Списки равны
+
+
+def equality_list_summ(list1,list2):
+    if sum(list1)==sum(list2):
+        print('sum')
+        equality_list(list1,list2)
+    else:
+        return 'A Lists are not equal' #Списки не равны
+
+
+def list_condition(list1,list2):
+    # Проверка равенства длины двух массивов
+    if len(list1)==len(list2):
+        print('condition')
+        equality_list_summ(list1,list2)
+    else:
+        return 'A Lists are not equal' #Списки не равны
+
+
+list1=list(input('Enter first list: ').split(',')) #Через запятую вводи числа
+list2=list(input('Enter second list: ').split(',')) #Через запятую вводи числа
+
+list1=list(map(int, list1))
+list2=list(map(int, list2))
+
+print(list_condition(list1,list2))
+
+
+
+
+
