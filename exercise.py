@@ -17,13 +17,13 @@ def count_digits(number):
 
 #2
 
-number=int(input('Enter Number: '))
-count_number=count_digits(number)
-def replace_nine(number,count_number):
-    number=str(number)
+number=input('Enter Number: ')
+# print(number)
+
+def replace_nine(number):
     result=''
     for i in number:
-        if i!=9:
+        if i!=0:
             rest=str(9-int(i))
             result=result+rest
         else:
@@ -31,4 +31,4 @@ def replace_nine(number,count_number):
     return result
 
 
-print(f'{replace_nine(number,count_number)}')
+print(f'result: {replace_nine(number)}')
