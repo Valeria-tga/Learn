@@ -63,16 +63,32 @@ def list_condition(list1,list2):
     else:
         return 'A Lists are not equal because len different' #Списки не равны
 
-try:
-    list1=list(input('Enter first list: ').split(',')) #Через запятую вводи числа
-    list2=list(input('Enter second list: ').split(',')) #Через запятую вводи числа
+# try:
+#     list1=list(input('Enter first list: ').split(',')) #Через запятую вводи числа
+#     list2=list(input('Enter second list: ').split(',')) #Через запятую вводи числа
+#
+#     list1=list(map(int, list1))
+#     list2=list(map(int, list2))
+#
+#     print(list_condition(list1,list2))
+# except ValueError:
+#     print('Вас попросили ввести список!')
 
-    list1=list(map(int, list1))
-    list2=list(map(int, list2))
 
-    print(list_condition(list1,list2))
-except ValueError:
-    print('Вас попросили ввести список!')
+#6===================================================
+#Условие существования треугольника - Чтобы сумма двух любых его сторон была больше длины третьей
+
+def condition(side1,side2,side3):
+    if (side1+side2)<side3 or (side1+side3)<side2 or (side3+side2)<side1:
+        return 'This triangle does not exist' #Треугольник не существует
+    else:
+        return 'This triangle exist' #Треугольник существует
+
+# side1,side2,side3=input('Enter free number: ').split(',') #Через запятую вводи числа
+#
+# print(f'result: {condition(side1,side2,side3)}')
+
+
 
 
 
