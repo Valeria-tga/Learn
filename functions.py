@@ -40,6 +40,14 @@ print(greet(whisper))
 print('\n')
 #=========================================
 
+def make_adder(n):
+    def add(x):
+        return x+n
+    return add
 
+plus_2=make_adder(2)
+plus_5=make_adder(5)
 
+print('plus_5 = ',plus_5(3))
+print('plus_2 = ',plus_2(2))
 
