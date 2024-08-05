@@ -7,7 +7,7 @@ def cycle_list_limit(number2):
     while True:
         yield number1
         number1 +=1
-        if number1>number2:
+        if number1>=number2:
             number1=(number1)%(number2)
 
 
@@ -24,11 +24,18 @@ def check_lenght(list1,list2):
 
 def full_list(list1,diff):
     result_list=list1
-    for i in cycle_list_limit(len(list1)):
-        result_list=result_list+list(list1[i])
-        diff=diff-1
-        if diff==0:
-            break
+    if len(list1) == 1:
+        for i in cycle_list_limit(len(list1)):
+            result_list = result_list + list(list1[i])
+            diff = diff - 1
+            if diff == 0:
+                break
+    else:
+        for i in cycle_list_limit(len(list1)-1):
+            result_list=result_list+list(list1[i])
+            diff=diff-1
+            if diff==0:
+                break
     return result_list
 
 
@@ -40,13 +47,11 @@ list1=list(input('Введите первый числовой список: ').
 list2=list(input('Введите второй числовой список: ').split(','))
 
 result=list(check_lenght(list1,list2))
-print(result[0])
-print(full_list(result[0], result[1]))
+# print(result[0])
+list_full=full_list(result[0], result[1])
+print(list_full)
+
 
 # 1,2,3,4,5,6,7
-# print(check_lenght(list1,list2)[1])
 
-# print(list_full)
-
-# print(full_list()))
 
