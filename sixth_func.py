@@ -7,6 +7,6 @@ def main(f, x):
         return n*(f(x))
     return calc(n)
 
-print(main(func,6))
+# print(main(func,6))
 
 
