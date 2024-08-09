@@ -80,17 +80,32 @@ def myrange(n):
         yield 2*k+1
 
 N=myrange(8)
-print('N = ', N)
-print('N = ', N)
+# print('N = ', N)
+# print('N = ', N)
 
 
 K=list(N)
-print('K = ',K)
+# print('K = ',K)
+#
+# print('K = ',K)
 
-print('K = ',K)
+
+#====================================================================
 
 
+def display(a,b):
+    'Это функция display() с двумя аргументами.'
+    print('[1] Первый аргумент: ', a)
+    print('[2] Второй аргумент: ', b)
 
+print(display(3,4))
+print(display.__doc__)
+
+f=display
+f.__doc__='Изменен текст документирования функции display()'
+
+print(f.__doc__)
+print(display.__doc__)
 
 
 
